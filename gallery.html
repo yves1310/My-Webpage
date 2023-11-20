@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Reset some default styles for consistency */
+        body {
+            margin: 0;
+            padding: 10;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: small;
+            background-image: url("bg10.png");
+            background-size: cover;
+        }
+
+        p{
+            background-color: lightblue; /* Set the background color */
+            padding: 2px; /* Optional: Add padding for spacing */
+        }
+        /* Or select by class if your <p> elements have a specific class */
+        .highlighted-paragraph {
+            background-color: lightblue; /* Set the background color */
+            padding: 10px; /* Optional: Add padding for spacing */
+        }
+
+        h1{
+            margin: 0;
+            padding: 10;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: xx-large;
+            background-color: beige;
+        }
+
+        .column h1{
+            font-size: x-large;
+            padding: 0px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        .column h2{
+            font-size: xx-large;
+            padding: 0px;
+            text-align: center;
+            background-color: aqua;
+        }
+
+         /* Define styles for header */
+         header {
+            background-color: gray;
+            color: black;
+            font-size: large;
+            padding: 0px 0;
+            text-align: center;
+        }
+
+        /* Define styles for footer */
+        footer {
+            background-color: gray;
+            color: black;
+            font-size: large;
+            padding: 0px 0;
+            text-align: center;
+        }
+
+        /* Main content styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        /* Define styles for columns */
+        .column {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 5px;
+            font-size: small;
+        }
+
+        .gallery {
+              display: block; 
+              margin: 0 auto; 
+              width: 360px; 
+              height: 360px; 
+
+        /* Add styles for the slideshow controls */
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Style the previous and next buttons */
+        .prevBtn, .nextBtn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: cell;
+            font-size: 15px; /* Increase font size */
+        }
+    }
+
+        /* Position the previous button on the left and next button on the right */
+        .prevBtn {
+            float: left;
+        }
+
+        .nextBtn {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+<style>
+    
+</style>
+    <div class="container">
+        <div class="column">
+            <nav><button><a href="index.html">Home</a></button></nav> <br>
+            <nav><button><a href="profile.html">Profile</a></button></nav> <br>
+            <nav><button><a href="gallery.html">Gallery</a></button></nav> <br>
+            <nav><button><a href="video.html">Video</a></button></nav> <br>
+            <nav><button><a href="about.html">About</a></button></nav> <br>
+        </div>
+
+        <div class="column">
+            <h1>Pictures</h1>
+            
+            <!-- Create a container for the gallery -->
+            <div class="slideshow-container">
+                <!-- Add 20 images to your gallery -->
+                <img class="gallery" src="pic2.jpg" alt="Image 1" width="360" height="360">
+                <img class="gallery" src="pic1.jpg" alt="Image 2" width="360" height="360">
+                <img class="gallery" src="pic3.jpg" alt="Image 3" width="360" height="360">
+                <img class="gallery" src="pic4.jpg" alt="Image 3" width="360" height="360">
+                <img class="gallery" src="pic5.jpg" alt="Image 5" width="360" height="360">
+                <img class="gallery" src="pic6.jpg" alt="Image 6" width="360" height="360">
+                <img class="gallery" src="pic7.jpg" alt="Image 7" width="360" height="360">
+                <img class="gallery" src="pic8.jpg" alt="Image 8" width="360" height="360">
+                <img class="gallery" src="pic9.jpg" alt="Image 9" width="360" height="360">
+                <img class="gallery" src="pic10.jpg" alt="Image 10" width="360" height="360">
+                <img class="gallery" src="pic11.jpg" alt="Image 11" width="360" height="360">
+                <img class="gallery" src="pic12.jpg" alt="Image 12" width="360" height="360">
+                <img class="gallery" src="pic13.jpg" alt="Image 13" width="360" height="360">
+                <img class="gallery" src="pic14.jpg" alt="Image 13" width="360" height="360">
+                <img class="gallery" src="pic15.jpg" alt="Image 15" width="360" height="360">
+                <img class="gallery" src="pic16.jpg" alt="Image 16" width="360" height="360">
+                <img class="gallery" src="pic17.jpeg" alt="Image 17" width="360" height="360">
+                <img class="gallery" src="pic18.jpeg" alt="Image 18" width="360" height="360">
+                <img class="gallery" src="pic19.jpeg" alt="Image 19" wwidth="360" height="360">
+                <img class="gallery" src="pic20.jpeg" alt="Image 20"width="360" height="360">
+                <img class="gallery" src="pic21.jpeg" alt="Image 21" width="360" height="360">
+                <!-- Repeat this for images 3 to 20 -->
+                          
+            
+            </div>
+            
+            <!-- Add navigation buttons for the slideshow -->
+            <div class="slideshow-controls">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+            
+            <script>
+                // JavaScript for the image slideshow
+                let currentImageIndex = 0;
+                const galleryImages = document.querySelectorAll(".gallery");
+            
+                function showImage(index) {
+                    galleryImages.forEach((image, i) => {
+                        if (i === index) {
+                            image.style.display = "block";
+                        } else {
+                            image.style.display = "none";
+                        }
+                    });
+                }
+            
+                function nextImage() {
+                    currentImageIndex++;
+                    if (currentImageIndex >= galleryImages.length) {
+                        currentImageIndex = 0;
+                    }
+                    showImage(currentImageIndex);
+                }
+            
+                function prevImage() {
+                    currentImageIndex--;
+                    if (currentImageIndex < 0) {
+                        currentImageIndex = galleryImages.length - 1;
+                    }
+                    showImage(currentImageIndex);
+                }
+            
+                // Display the first image initially
+                showImage(currentImageIndex);
+            
+                // Add event listeners to the navigation buttons
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+            
+                prevBtn.addEventListener("click", prevImage);
+                nextBtn.addEventListener("click", nextImage);
+            </script>
+            
+        </div>
+
+        <div class="column">
+            <h2>News</h2>
+            <p><a href="https://www.facebook.com/CCSISPSCOfficial?mibextid=ZbWKwL">Official fb page of CCS</a></p>
+            <p><a href="https://www.facebook.com/profile.php?id=61551472926598&mibextid=ZbWKwL">Facebook page of CSP Organization</a></p>
+            <p><a href="https://m.facebook.com/story.php?story_fbid=pfbid02RsMNA1ivfTYGrE5ggEKamno55iAvz3pK2kYHSHkL4imkd4MGzneDoWkD1pvgqXtyl&id=61550903619057&mibextid=Nif5oz">Surprise!</a></p>
+            <p><a href="https://m.facebook.com/story.php?story_fbid=pfbid0wVZCj3WPyR2NHx2a5s9syvgp2itCdSCizaLdB7na4ztEdTxYPayM1VNpVpxGVF9Pl&id=61551472926598&mibextid=Nif5oz">Teacher's Day</a></p>
+            <p><a href="https://fb.watch/nykPojQ9aT/?mibextid=Nif5oz">Video Greetings of CCS students</a></p>
+        </div>
+    </div>
+
+    <footer>
+        All rights reserved.
+    </footer>
+</body>
+</html>
